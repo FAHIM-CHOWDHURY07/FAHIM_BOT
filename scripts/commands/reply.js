@@ -1,6 +1,6 @@
 const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
-  name: "reply",
+  name: "goibot",
   prefix: 'awto',
   premium: false,
   version: "1.0.1",
@@ -184,7 +184,12 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    if ((event.body.toLowerCase() == "ami alvi") || (event.body.toLowerCase() == "kire")) {
      return api.sendMessage("হ্যাঁ বস আলভী চৌধুরী কেমন আছো?", threadID);
    };
-  
+   mess = "{name}"
+
+  if (event.body.indexOf("bot") == 0 || (event.body.indexOf("Bot") == 0)) {
+    var msg = {
+      body: `╭──────•◈•──────╮\n         🄰🄻🅅🄸🄱🄾🅃        \n\n 🗣️Dᴇᴀʀ, ${name}\n 💌:${rand} \n\n╰──────•◈•──────╯`
+    }
     return api.sendMessage(msg, threadID, messageID);
   };
 
